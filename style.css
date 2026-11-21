@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.add-form {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #fafafa;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 150px;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+input, select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  padding: 8px 15px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #eee;
+}
+
+button:hover {
+  background: #ddd;
+}
+
+.btn-add {
+  background: #007bff;
+  color: white;
+  border: none;
+  align-self: flex-end;
+}
+
+.btn-add:hover {
+  background: #0056b3;
+}
+
+.message {
+  color: red;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #fafafa;
+  border: 1px solid #ccc;
+}
+
+.filter-check {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tickets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ticket {
+  border: 1px solid #ccc;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ticket-info {
+  flex: 1;
+}
+
+.ticket-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.ticket-details {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  gap: 15px;
+}
+
+.ticket-status {
+  font-weight: bold;
+}
+
+
+.ticket-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-done {
+  background: #e0e0e0;
+}
+
+.empty-message {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+  border: 1px dashed #ccc;
+}
