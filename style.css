@@ -4,7 +4,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
+  background-color: #ffffff;
   margin: 0;
   padding: 20px;
 }
@@ -15,7 +15,7 @@ body {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #a500aa;
 }
 
 h1 {
@@ -24,10 +24,12 @@ h1 {
 }
 
 .add-form {
-  border: 1px solid #ccc;
+  border: 3px solid #ccc;
   padding: 15px;
   margin-bottom: 20px;
-  background: #fafafa;
+  background: #ffffff;
+  border-radius: 5px;
+  border-color: #ff75f4;
 }
 
 .form-row {
@@ -51,7 +53,7 @@ label {
 
 input, select {
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #fb00ff;
   border-radius: 4px;
   font-size: 14px;
 }
@@ -59,7 +61,7 @@ input, select {
 button {
   padding: 8px 15px;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   background: #eee;
 }
@@ -69,18 +71,18 @@ button:hover {
 }
 
 .btn-add {
-  background: #007bff;
-  color: white;
+  background: #ff37eb;
+  color: rgb(0, 0, 0);
   border: none;
   align-self: flex-end;
 }
 
 .btn-add:hover {
-  background: #0056b3;
+  background: #b300b0;
 }
 
 .message {
-  color: red;
+  color: rgb(75, 0, 54);
   font-size: 14px;
   min-height: 20px;
 }
@@ -91,24 +93,32 @@ button:hover {
   align-items: center;
   margin-bottom: 20px;
   padding: 10px;
-  background: #fafafa;
-  border: 1px solid #ccc;
+  background: #ffffff;
+  border: 3px solid #f85dfd;
+  border-radius: 5px;
 }
 
 .filter-check {
   display: flex;
   align-items: center;
   gap: 5px;
+  
+}
+
+.filter-category {
+  background: #b300b0;
 }
 
 .tickets-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  
 }
 
 .ticket {
-  border: 1px solid #ccc;
+  border: 3px solid #ff75f4;
+  border-radius: 5px;
   padding: 15px;
   display: flex;
   justify-content: space-between;
@@ -136,8 +146,8 @@ button:hover {
 
 .ticket-status {
   font-weight: bold;
+  
 }
-
 
 .ticket-actions {
   display: flex;
@@ -146,6 +156,19 @@ button:hover {
 
 .btn-done {
   background: #e0e0e0;
+  background: #ff75f4;
+}
+
+.btn-done:hover {
+  background: #c608b0;
+}
+
+.btn-delete {
+  background: rgba(225, 20, 222, 0.612);
+}
+
+.btn-delete:hover {
+  background: rgb(130, 0, 119);
 }
 
 .empty-message {
