@@ -12,39 +12,40 @@ const messageEl = document.getElementById('message');
 const ticketsList = document.getElementById('tickets-list');
 const onlyOpenCheckbox = document.getElementById('only-open-checkbox');
 const filterCategorySelect = document.getElementById('filter-category');
+const onlyClosedCheckbox = document.getElementById('only-closed-checkbox');
 
 function renderTickets() {
     ticketsList.innerHTML = '';
 
     const onlyOpen = onlyOpenCheckbox.checked;
     const filterCategory = filterCategorySelect.value;
+    const onlyClosed = onlyClosedCheckbox.checked;
 
     if (tickets.length === 0) {
-        ticketsList.innerHTML = '<div class="empty-message>Заявок пока нет.</div>"'
+        ticketsList.innerHTML = '<div class="empty-message">Заявок пока нет.</div>"'
         return;
     }
 
     const visible = []
 
-    for (let i = 0; i < tickets.length; i++) {
-        const t = tickets[i];
-        if (onlyOpen && t.done !== false) continue;
-        if (filterCategory && t.category !== filterCategory) continue;
-        visible.push({ ticket: t, index: i });
-    }
+for (let i = 0; i < tickets.length; i++) {
+    const t = tickets[i];
+    if (onlyOpen && t.done) continue;
+    if (onlyClosed && !t.done) continue;
+    if (filterCategory && t.category !== filterCategory) continue;
+    visible.push({ ticket: t, index: i });
+}
 
-    if (visible.length === 0) {
-        if (tickets.length > 0) {
-            if (onlyOpen && !filterCategory) {
-                ticketsList.innerHTML = '<div class="empty-message">Открытых заявок нет</div>';
-            } else {
-                ticketsList.innerHTML = '<div class="empty-message">Нет заявок по выбранным фильтрам</div>';
-            }
-        } else {
-            ticketsList.innerHTML = '<div class="empty-message">Заявок пока нет</div>';
-        }
-        return;
+if (visible.length === 0) {
+    if (onlyOpen) {
+        ticketsList.innerHTML = '<div class="empty-message">Открытых заявок нет</div>';
+    } else if (onlyClosed) {
+        ticketsList.innerHTML = '<div class="empty-message">Закрытых заявок нет</div>';
+    } else {
+        ticketsList.innerHTML = '<div class="empty-message">Нет заявок по выбранным фильтрам</div>';
     }
+    return;
+}
 
     for (const { ticket, index } of visible) {
         const row = document.createElement('div');
@@ -132,7 +133,18 @@ addBtn.addEventListener('click', () => {
     renderTickets();
 });
 
-onlyOpenCheckbox.addEventListener('change', renderTickets);
-filterCategorySelect.addEventListener('change', renderTickets);
+onlyOpenCheckbox.addEventListener('change', () => {
+    if (onlyOpenCheckbox.checked) {
+        onlyClosedCheckbox.checked = false;
+    }
+    renderTickets();
+});
+
+onlyClosedCheckbox.addEventListener('change', () => {
+    if (onlyClosedCheckbox.checked) {
+        onlyOpenCheckbox.checked = false;
+    }
+    renderTickets();
+});
 
 renderTickets();

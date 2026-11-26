@@ -4,7 +4,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
+  background-color: #ffd0fa;
   margin: 0;
   padding: 20px;
 }
@@ -118,6 +118,7 @@ button:hover {
 
 .ticket {
   border: 3px solid #ff75f4;
+  background-color: #ffffff;
   border-radius: 5px;
   padding: 15px;
   display: flex;
@@ -126,6 +127,7 @@ button:hover {
   flex-wrap: wrap;
   gap: 10px;
 }
+
 
 .ticket-info {
   flex: 1;
